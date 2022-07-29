@@ -1,29 +1,25 @@
 from flask import Flask
 
-
-
 app = Flask(__name__)
 app.config.from_pyfile('settings.py')
 
 ###### Pages
-## Homepage
-from pages.homepage.homepage import homepage
-app.register_blueprint(homepage)
-
-## About
+## about
 from pages.about.about import about
 app.register_blueprint(about)
 
-## Catalog
-from pages.catalog.catalog import catalog
-app.register_blueprint(catalog)
+## contact
+from pages.contact.contact import contact
+app.register_blueprint(contact)
 
-## Page error handlers
-from pages.page_error_handlers.page_error_handlers import page_error_handlers
-app.register_blueprint(page_error_handlers)
+## find_my
+from pages.find_my.find_my import find_my
+app.register_blueprint(find_my)
 
-
-###### Components
 ## Main menu
-from components.main_menu.main_menu import main_menu
-app.register_blueprint(main_menu)
+from pages.main.main import main
+app.register_blueprint(main)
+# parking
+
+from pages.parking.parking import parking
+app.register_blueprint(parking)
